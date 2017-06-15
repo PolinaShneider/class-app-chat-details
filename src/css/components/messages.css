@@ -1,0 +1,36 @@
+.messages {
+	background-color: #f1efef;
+}
+.messages__item {
+	padding: 25px 15px;
+	border-top: 1px solid #dcdcdc;
+}
+.messages__header {
+	height: 70px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.messages__person-name {
+    max-width: 145px;
+}
+.messages__person-ava {
+	margin-right: 15px;
+	align-self: flex-start;
+}
+.messages__first-line {
+	display: flex;
+	justify-content: space-between;
+	line-height: 17px;
+	margin-bottom: 8px;
+}
+.messages__time {
+	color: #a2a1a1;
+}
+.messages__text {
+	font-size: 13px;
+	line-height: 17px;
+	color: #a2a1a1;
+	overflow: hidden; 
+	max-height: 51px;
+}

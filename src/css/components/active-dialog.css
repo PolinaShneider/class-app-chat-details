@@ -1,0 +1,109 @@
+.active-dialog {
+	background-color: #f7f7f7;
+	height: 800px;
+}
+.active-dialog__header {
+	height: 70px;
+	padding: 0 20px;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #f1f1f1;
+	border-bottom: 1px solid #e7e7e7;
+}
+.active-dialog__name {
+	font-size: 22px;
+	color: #494949;
+}
+.active-dialog__person {
+	order: 0;
+	margin-right: 10px;
+	margin-left: 0;
+}
+.active-dialog__person--me {
+	order: 1;
+	margin-right: 0;
+	margin-left: 10px;
+}
+.active-dialog__button {
+	color: #6a6a6a;
+	border: 1px solid #dadada;
+	padding: 10px 12px;
+}
+.active-dialog__content {
+	padding: 20px 25px;
+	height: 610px;
+	overflow: auto;
+}
+.active-dialog__item {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-bottom: 22px;
+}
+.active-dialog__wrapper {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.active-dialog__message {
+	position: relative;
+	width: 450px;
+	background-color: #fff;
+	padding: 10px;
+}
+.active-dialog__message--me {
+	background-color: #e7f1f6;
+}
+.active-dialog__message:after {
+	right: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(255, 255, 255, 0);
+	border-right-color: #fff;
+	border-width: 7px;
+	margin-top: -7px;
+}
+.active-dialog__message--me:after {
+	left: 100%;
+	top: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+	border-color: rgba(255, 255, 255, 0);
+	border-width: 7px;
+	margin-top: -7px;
+	border-left-color: #e7f1f6;
+}
+.active-dialog__date {
+	color: #aeadad;
+	font-size: 12px;
+	padding-top: 10px;
+}
+.active-dialog__multiple {
+	flex-direction: column;
+}
+.active-dialog__wrapper--multiple {
+	align-items: flex-start;
+}
+.active-dialog__multiple > .active-dialog__message:not(:first-child):after {
+	border-width: 0px;
+}
+.active-dialog__multiple > .active-dialog__message:not(:first-child) {
+	border-top: 1px solid #d9e2e7;
+}
+.active-dialog__footer {
+	height: 80px;
+	background-color: #f1f1f1;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+}

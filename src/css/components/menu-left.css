@@ -1,0 +1,71 @@
+.menu-left {
+	width: 240px;
+	background-color: #25282e;
+	font-weight: 200;
+}
+.menu-left__header {
+	height: 80px;
+	background-color: #22252a;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+.menu-left__branding-text {
+	color: #fff;
+	font-size: 26px;
+	letter-spacing: 5px;
+}
+.menu-left__hamburger {
+	color: #7a7c7f;
+	font-size: 22px;
+	padding: 8px 10px;
+	border: 1px solid #37393e;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.menu-left__content {
+	padding: 35px 25px;
+}
+.menu-left__content-block:not(:first-child) {
+	padding-top: 20px;
+}
+.menu-left__item-block {
+	display: flex;
+	flex-direction: column;
+}
+.menu-left__title {
+	font-size: 11px;
+	color: #5c5d5f;
+}
+.menu-left__item {
+	display: flex;
+    align-items: center;
+	padding: 15px 0;
+	color: #bebebe;
+}
+.menu-left__icon {
+	font-size: 20px !important;
+	width: 35px;
+}
+.menu-left__person {
+	padding-top: 15px;
+	padding-bottom: 0;
+}
+.menu-left__person-ava {
+	height: 35px;
+	width: 35px;
+	margin-right: 15px;
+}
+.menu-left__person-name {
+	line-height: 17px;
+	text-overflow: ellipsis; 
+	overflow: hidden; 
+	max-width: 140px; 
+	height: 1.2em; 
+	white-space: nowrap;
+}
+.menu-left__person-occupation {
+	color: #5f6061;
+	font-size: 12px;
+	line-height: 17px;
+}

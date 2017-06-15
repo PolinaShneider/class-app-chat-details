@@ -1,0 +1,18 @@
+.button {
+	display: inline-block;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 8px 16px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.send-button {
+	background-color: #0aa8e3;
+	font-weight: 200;
+	border-radius: 4px;
+	color: #fff;
+	padding: 7px 25px;
+}
