@@ -4,6 +4,9 @@ html {
     line-height: 1.5em;
     letter-spacing: .1px;
 }
+::-webkit-scrollbar { 
+    display: none; 
+}
 body {
 	margin: 0;
 }

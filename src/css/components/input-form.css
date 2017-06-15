@@ -9,12 +9,14 @@
 .search-form input[type="search"] {
 	min-width: 100%;
 	height: 35px;
+	min-height: 35px;
 	background: #fff;
 	border: 1px solid #ededed;
 	font-size: 13px;
 	float: left;
 	color: #6b6b6b;
 	padding-left: 35px;
+	-webkit-appearance: textfield;
 	border-radius: 4px;
 	outline: none;
 }
@@ -44,6 +46,8 @@
     border: 1px solid rgba(0,0,0,.15);
     border-radius: 4px;
     outline: none;
+    margin-top: 0;
+    margin-bottom: 0;
 }
 .send-form__icon {
 	padding: 7px 12px;
