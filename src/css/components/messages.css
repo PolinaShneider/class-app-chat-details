@@ -15,8 +15,11 @@
     max-width: 145px;
 }
 .messages__person-ava {
-	margin-right: 15px;
 	align-self: flex-start;
+}
+.messages__wrapper {
+	max-width: 220px;
+	margin-left: 15px;
 }
 .messages__first-line {
 	display: flex;
