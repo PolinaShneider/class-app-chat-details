@@ -31,7 +31,6 @@ input:-webkit-autofill:active {
 }
 .center-block {
 	background-color: #f1f1f1;
-	height: 800px;
 	width: 100%;
 	display: flex;
 }
