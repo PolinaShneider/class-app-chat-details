@@ -245,11 +245,11 @@
 		chat = document.getElementById("chat");
 		
 		senderField.addEventListener('change', sendMessageMe);
-		setTimeout(function () {
+		// setTimeout(function () {
 
-            setInterval( sendMessageOther, 10000);
+  //           setInterval( sendMessageOther, 10000);
 
-        }, 1500);
+  //       }, 1500);
 
 	});
 
@@ -292,6 +292,7 @@
 	    dialog__item.appendChild(dialog__date);
 
 	    senderField.value = '';
+	    sendMessageOther();
 	}
 
 	function sendMessageOther() {
