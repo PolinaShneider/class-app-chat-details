@@ -94,7 +94,7 @@
 						<div class="active-dialog__name">Joseph Bowman</div>
 						<div class="button active-dialog__button">View profile</div>
 					</div>
-					<div class="active-dialog__content">
+					<div class="active-dialog__content" id="chat">
 						<div class="active-dialog__item">
 							<div class="active-dialog__wrapper">
 								<div class="person active-dialog__person">
@@ -151,29 +151,6 @@
 								<div class="active-dialog__message">My mom has baked some cookies and told me to invite all my friends for a cup of tea next weekend. Will you come?</div>
 							</div>
 							<div class="active-dialog__date">Friday, June 15, 2017, at 6:30 pm</div>
-						</div>
-						<div class="active-dialog__item active-dialog__item--me hide" id="targetMe">
-							<div class="active-dialog__wrapper active-dialog__wrapper--multiple">
-								<div class="person active-dialog__person active-dialog__person--me">
-									<img class="person__ava" src="src/img/person5.jpg">
-								</div>
-								<div class="active-dialog__multiple">
-								<!-- Your messages would be pasted here -->
-								</div>
-							</div>
-							<div class="active-dialog__date">Friday, June 15, 2017, at 10:00 pm</div>
-						</div>
-						<div class="active-dialog__item hide" id="targetOther">
-							<div class="active-dialog__wrapper active-dialog__wrapper--multiple">
-								<div class="person active-dialog__person">
-									<img class="person__ava" src="src/img/person5.jpg">
-								</div>
-								<div class="active-dialog__multiple">
-								<!-- Other person messages would be pasted here -->
-								</div>
-							</div>
-
-							<div class="active-dialog__date">Friday, June 15, 2017, at 10:00 pm</div>
 						</div>
 					</div>
 					<div class="active-dialog__footer">
@@ -265,33 +242,95 @@
 
 		senderButton = document.getElementById("sender-button");
 		senderField = document.getElementById("sender-field");
-		targetMe = document.getElementById("targetMe");
-		targetOther = document.getElementById("targetOther");
-
+		chat = document.getElementById("chat");
+		
 		senderField.addEventListener('change', sendMessageMe);
 		setTimeout(function () {
 
-            setInterval( sendMessageOther, 7000);
+            setInterval( sendMessageOther, 10000);
 
         }, 1500);
 
 	});
 
 	function sendMessageMe() {
-		targetMe.classList.remove("hide");
-	    var divtest = document.createElement("div");
-	    divtest.textContent += senderField.value;
-	    divtest.setAttribute("class", "active-dialog__message active-dialog__message--me");
-	    targetMe.childNodes[1].childNodes[3].appendChild(divtest);
+
+	    var dialog__item = document.createElement("div");
+	    dialog__item.setAttribute("class", "active-dialog__item active-dialog__item--me");
+
+	    chat.appendChild(dialog__item);
+
+	    var dialog__wrapper = document.createElement("div");
+	    dialog__wrapper.setAttribute("class", "active-dialog__wrapper");
+
+	    dialog__item.appendChild(dialog__wrapper);
+
+	    var dialog__person = document.createElement("div");
+	    dialog__person.setAttribute("class", "person active-dialog__person active-dialog__person--me");
+
+	    dialog__wrapper.appendChild(dialog__person);
+
+	    var person__ava = document.createElement("img");
+	    person__ava.setAttribute("class", "person__ava");
+	    person__ava.setAttribute("src", "src/img/person5.jpg");
+
+	    dialog__person.appendChild(person__ava);
+
+	    var dialog__message = document.createElement("div");
+	    dialog__message.setAttribute("class", "active-dialog__message active-dialog__message--me");
+
+
+	    dialog__message.textContent += senderField.value;
+
+	    dialog__wrapper.appendChild(dialog__message);
+
+	    var dialog__date = document.createElement("div");
+	    dialog__date.setAttribute("class", "active-dialog__date");
+
+	    dialog__date.textContent += "Friday, June 15, 2017, at 10:00 pm";
+
+	    dialog__item.appendChild(dialog__date);
+
 	    senderField.value = '';
 	}
 
 	function sendMessageOther() {
-		targetOther.classList.remove("hide");
-	    var divtest = document.createElement("div");
-	    divtest.textContent += randomFrom(answers);
-	    divtest.setAttribute("class", "active-dialog__message");
-	    targetOther.childNodes[1].childNodes[3].appendChild(divtest);
+		var dialog__item = document.createElement("div");
+	    dialog__item.setAttribute("class", "active-dialog__item");
+
+	    chat.appendChild(dialog__item);
+
+	    var dialog__wrapper = document.createElement("div");
+	    dialog__wrapper.setAttribute("class", "active-dialog__wrapper");
+
+	    dialog__item.appendChild(dialog__wrapper);
+
+	    var dialog__person = document.createElement("div");
+	    dialog__person.setAttribute("class", "person active-dialog__person");
+
+	    dialog__wrapper.appendChild(dialog__person);
+
+	    var person__ava = document.createElement("img");
+	    person__ava.setAttribute("class", "person__ava");
+	    person__ava.setAttribute("src", "src/img/person6.jpg");
+
+	    dialog__person.appendChild(person__ava);
+
+	    var dialog__message = document.createElement("div");
+	    dialog__message.setAttribute("class", "active-dialog__message");
+
+
+	    dialog__message.textContent += randomFrom(answers);
+
+	    dialog__wrapper.appendChild(dialog__message);
+
+	    var dialog__date = document.createElement("div");
+	    dialog__date.setAttribute("class", "active-dialog__date");
+
+	    dialog__date.textContent += "Friday, June 15, 2017, at 10:00 pm";
+
+	    dialog__item.appendChild(dialog__date);
+	    
 	}
 
 	function randomFrom(arr) {
