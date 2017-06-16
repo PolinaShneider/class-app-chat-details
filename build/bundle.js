@@ -471,6 +471,246 @@ module.exports = __webpack_require__.p + "./src/fonts/b06871f281fee6b241d60582ae
 __webpack_require__(0);
 __webpack_require__(1);
 
+var appChat = (function (appChat) {
+
+    appChat.settings = {};
+
+    /**
+    * Preparation method
+    */
+    appChat.init = function (settings) {
+
+        /** Save settings or use defaults */
+        for (var set in settings ) {
+
+            this.settings[set] = settings[set] || this.settings[set] || null;
+
+        }
+
+    };
+
+
+
+    return appChat;
+
+
+})({});
+
+/**
+* Document ready event listener
+* @usage codex.docReady(function(){ # code ... } );
+*/
+appChat.docReady = function (f) {
+
+    return /in/.test(document.readyState) ? setTimeout(appChat.docReady, 9, f) : f();
+
+};
+
+
+
+appChat.time = __webpack_require__(29);
+appChat.helpers = __webpack_require__(27);
+appChat.activeDialog = __webpack_require__(28);
+
+
+module.exports = appChat;
+
+
+
+
+/***/ }),
+/* 13 */,
+/* 14 */,
+/* 15 */,
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */
+/***/ (function(module, exports) {
+
+module.exports = function() {
+
+	var randomFrom = function (arr) {
+
+        return arr[random_(0, arr.length - 1)];
+
+    };
+
+    var random_ = function(min, max) {
+
+        return Math.floor(Math.random() * (max - min + 1)) + min;
+
+    };
+
+    return {
+    	randomFrom : randomFrom
+    }
+
+}({})
+
+/***/ }),
+/* 28 */
+/***/ (function(module, exports) {
+
+module.exports = function(){
+
+	var answers = [
+        'Уже работаем над этим!',
+        'Я так не умею',
+        'Клево!',
+        'Потрясающе',
+        'Продолжайте',
+        'Не понял'
+    ];
+
+	var sendMessageMe = function() {
+
+	    var dialog__item = document.createElement("div");
+	    dialog__item.setAttribute("class", "active-dialog__item active-dialog__item--me");
+
+	    chat.appendChild(dialog__item);
+
+	    var dialog__wrapper = document.createElement("div");
+	    dialog__wrapper.setAttribute("class", "active-dialog__wrapper");
+
+	    dialog__item.appendChild(dialog__wrapper);
+
+	    var dialog__person = document.createElement("div");
+	    dialog__person.setAttribute("class", "person active-dialog__person active-dialog__person--me");
+
+	    dialog__wrapper.appendChild(dialog__person);
+
+	    var person__ava = document.createElement("img");
+	    person__ava.setAttribute("class", "person__ava");
+	    person__ava.setAttribute("src", "src/img/person5.jpg");
+
+	    dialog__person.appendChild(person__ava);
+
+	    var dialog__message = document.createElement("div");
+	    dialog__message.setAttribute("class", "active-dialog__message active-dialog__message--me");
+
+
+	    dialog__message.textContent += senderField.value;
+
+	    dialog__wrapper.appendChild(dialog__message);
+
+	    var dialog__date = document.createElement("div");
+	    dialog__date.setAttribute("class", "active-dialog__date");
+
+	    dialog__date.textContent += appChat.time.buildDate();
+
+	    dialog__item.appendChild(dialog__date);
+
+	    senderField.value = '';
+	    sendMessageOther();
+	}
+
+	var sendMessageOther = function() {
+		var dialog__item = document.createElement("div");
+	    dialog__item.setAttribute("class", "active-dialog__item");
+
+	    chat.appendChild(dialog__item);
+
+	    var dialog__wrapper = document.createElement("div");
+	    dialog__wrapper.setAttribute("class", "active-dialog__wrapper");
+
+	    dialog__item.appendChild(dialog__wrapper);
+
+	    var dialog__person = document.createElement("div");
+	    dialog__person.setAttribute("class", "person active-dialog__person");
+
+	    dialog__wrapper.appendChild(dialog__person);
+
+	    var person__ava = document.createElement("img");
+	    person__ava.setAttribute("class", "person__ava");
+	    person__ava.setAttribute("src", "src/img/person6.jpg");
+
+	    dialog__person.appendChild(person__ava);
+
+	    var dialog__message = document.createElement("div");
+	    dialog__message.setAttribute("class", "active-dialog__message");
+
+
+	    dialog__message.textContent += appChat.helpers.randomFrom(answers);
+
+	    dialog__wrapper.appendChild(dialog__message);
+
+	    var dialog__date = document.createElement("div");
+	    dialog__date.setAttribute("class", "active-dialog__date");
+
+	    dialog__date.textContent += appChat.time.buildDate();
+
+	    dialog__item.appendChild(dialog__date);
+	    
+	};
+
+	return {
+		sendMessageMe : sendMessageMe
+	}
+}({})
+
+/***/ }),
+/* 29 */
+/***/ (function(module, exports) {
+
+module.exports = function(){
+	var buildDate = function() {
+
+        var date = new Date(),
+            dayofMonth = date.getDate(),
+            time = date.toLocaleString('en-US', { hour: 'numeric', minute:'numeric', hour12: true });
+            year = date.getFullYear();
+
+        var weekday = new Array(7);
+		    weekday[0] = "Sunday";
+		    weekday[1] = "Monday";
+		    weekday[2] = "Tuesday";
+		    weekday[3] = "Wednesday";
+		    weekday[4] = "Thursday";
+		    weekday[5] = "Friday";
+		    weekday[6] = "Saturday";
+
+		var month = new Array();
+			month[0] = "January";
+			month[1] = "February";
+			month[2] = "March";
+			month[3] = "April";
+			month[4] = "May";
+			month[5] = "June";
+			month[6] = "July";
+			month[7] = "August";
+			month[8] = "September";
+			month[9] = "October";
+			month[10] = "November";
+			month[11] = "December";
+
+		var monthtoStr = month[date.getMonth()];
+
+		var dayofWeek = weekday[date.getDay()];
+
+
+        if ( dayofMonth < 10 ) {
+
+            dayofMonth = '0' + dayofMonth;
+
+        }
+
+        return  dayofWeek + ', ' + monthtoStr + ' ' + dayofMonth +', ' + year + ', at ' + time.toLowerCase();
+
+    };
+
+    return {
+    	buildDate : buildDate 
+    }
+}({})
 
 /***/ })
 /******/ ]);
