@@ -17,6 +17,10 @@ input:-webkit-autofill:active {
     transition: background-color 5000s ease-in-out 0s;
 }
 
+.hide {
+	display: none !important;
+}
+
 .center_side {
     margin: 0 auto;
     max-width: 1150px;
