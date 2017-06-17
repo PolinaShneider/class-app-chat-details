@@ -34,7 +34,7 @@
 }
 .active-dialog__content {
 	padding: 20px 0;
-	height: calc(100% - 190px);
+	height: calc(100vh - 270px);
 	width: 620px;
 	overflow: auto;
 }
