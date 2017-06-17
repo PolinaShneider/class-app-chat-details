@@ -1,5 +1,6 @@
 .active-dialog {
 	background-color: #f7f7f7;
+	height: 800px;
 	width: 600px;
 	overflow: hidden;
 }
@@ -33,7 +34,7 @@
 }
 .active-dialog__content {
 	padding: 20px 0;
-	max-height: 550px;
+	height: 610px;
 	width: 620px;
 	overflow: auto;
 }
@@ -103,7 +104,7 @@
 	border-top: 1px solid #d9e2e7;
 }
 .active-dialog__footer {
-	height: 80px;
+	height: 78px;
 	background-color: #f1f1f1;
 	display: flex;
 	align-items: center;
