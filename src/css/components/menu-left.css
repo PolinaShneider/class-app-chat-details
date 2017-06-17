@@ -25,6 +25,8 @@
 }
 .menu-left__content {
 	padding: 35px 25px;
+	overflow-y: auto;
+    height: calc(100% - 140px);
 }
 .menu-left__content-block:not(:first-child) {
 	padding-top: 20px;

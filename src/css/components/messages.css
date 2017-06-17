@@ -11,6 +11,10 @@
 	align-items: center;
 	justify-content: center;
 }
+.messages__item-wrapper {
+	height: calc(100% - 70px);
+	overflow: scroll;
+}
 .messages__person-name {
     max-width: 145px;
 }

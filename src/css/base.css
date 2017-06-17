@@ -29,6 +29,9 @@ input:-webkit-autofill:active {
 .main-content {
 	display: flex;
 	flex-direction: row;
+	height: 100vh;
+    overflow-y: hidden;
+    overflow-x: scroll;
 }
 .main-content-right {
 	flex-grow: 1;
@@ -36,6 +39,7 @@ input:-webkit-autofill:active {
 .center-block {
 	background-color: #f1f1f1;
 	width: 100%;
+	height: calc(100% - 80px); /*Height of viewport minus height of navbar*/
 	display: flex;
 }
 .center-block__inner-right {
