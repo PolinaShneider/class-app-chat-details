@@ -23,6 +23,9 @@
 	border-radius: 4px;
 	cursor: pointer;
 }
+.menu-left__hamburger:hover {
+	color: #aaacb0;
+}
 .menu-left__content {
 	padding: 35px 25px;
 	overflow-y: auto;
@@ -39,11 +42,19 @@
 	font-size: 11px;
 	color: #5c5d5f;
 }
+.menu-left__title:hover {
+	color: #aaacb0;
+	cursor: pointer;
+}
 .menu-left__item {
 	display: flex;
     align-items: center;
 	padding: 15px 0;
 	color: #bebebe;
+}
+.menu-left__item:hover {
+	color: #dbdbdb;
+	cursor: pointer;
 }
 .menu-left__icon {
 	font-size: 20px !important;
@@ -63,7 +74,6 @@
 	text-overflow: ellipsis; 
 	overflow: hidden; 
 	max-width: 140px; 
-	height: 1.2em; 
 	white-space: nowrap;
 }
 .menu-left__person-occupation {

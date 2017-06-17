@@ -106,7 +106,23 @@ module.exports = function(){
         'Алло'
     ];
 
+    var hideStatic = function() {
+    	var items = document.getElementsByClassName("active-dialog__item--static");
+    	for (var i = 0; i < items.length; i++) {
+    		if (!items[i].classList.contains("hide")) {
+    			items[i].classList.add("hide");
+    		}
+    	}
+    };
+
+    var scrollToBottom = function() {
+    	var objDiv = document.getElementById("chat");
+		objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
 	var sendMessageMe = function() {
+		
+		hideStatic();
 
 	    var dialog__item = document.createElement("div");
 	    dialog__item.setAttribute("class", "active-dialog__item active-dialog__item--me");
@@ -146,6 +162,7 @@ module.exports = function(){
 
 	    senderField.value = '';
 	    sendMessageOther();
+	    scrollToBottom();
 	}
 
 	var sendMessageOther = function() {
@@ -184,11 +201,13 @@ module.exports = function(){
 	    dialog__date.textContent += appChat.time.buildDate();
 
 	    dialog__item.appendChild(dialog__date);
+	    scrollToBottom();
 	    
 	};
 
 	return {
-		sendMessageMe : sendMessageMe
+		sendMessageMe : sendMessageMe,
+		hideStatic : hideStatic
 	}
 }({})
 
@@ -702,12 +721,55 @@ appChat.docReady = function (f) {
 appChat.time = __webpack_require__(4);
 appChat.helpers = __webpack_require__(3);
 appChat.activeDialog = __webpack_require__(2);
+appChat.messages = __webpack_require__(30);
 
 
 module.exports = appChat;
 
 
 
+
+/***/ }),
+/* 16 */,
+/* 17 */,
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */
+/***/ (function(module, exports) {
+
+module.exports = function(){
+
+	var makeUnactive = function(){
+
+		messages = document.querySelector(".messages__item-wrapper");
+		activeMsg = messages.querySelectorAll(".messages__item--active");
+
+		if (activeMsg.length) {
+			for (var i = 0; i < activeMsg.length; i++) {
+				activeMsg[i].classList.remove("messages__item--active");
+			}
+		}
+	};
+	var makeActive = function(e){
+		makeUnactive();
+		if(e.target.classList.contains("wholeClickable")) {
+			e.target.parentNode.classList.toggle("messages__item--active");
+		}
+	}
+	return {
+		makeActive : makeActive
+	}
+}({})
 
 /***/ })
 /******/ ]);

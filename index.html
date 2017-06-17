@@ -95,7 +95,7 @@
 						<div class="button active-dialog__button">View profile</div>
 					</div>
 					<div class="active-dialog__content" id="chat">
-						<div class="active-dialog__item">
+						<div class="active-dialog__item--static active-dialog__item">
 							<div class="active-dialog__wrapper">
 								<div class="person active-dialog__person">
 									<img class="person__ava" src="src/img/person6.jpg">
@@ -104,7 +104,7 @@
 							</div>
 							<div class="active-dialog__date">Monday, May 25, 2017, at 9:52 pm</div>
 						</div>
-						<div class="active-dialog__item active-dialog__item--me">
+						<div class="active-dialog__item--static active-dialog__item active-dialog__item--me">
 							<div class="active-dialog__wrapper">
 								<div class="person active-dialog__person active-dialog__person--me">
 									<img class="person__ava" src="src/img/person5.jpg">
@@ -113,7 +113,7 @@
 							</div>
 							<div class="active-dialog__date">Friday, June 15, 2017, at 10:40 am</div>
 						</div>
-						<div class="active-dialog__item">
+						<div class="active-dialog__item--static active-dialog__item">
 							<div class="active-dialog__wrapper">
 								<div class="person active-dialog__person">
 									<img class="person__ava" src="src/img/person6.jpg">
@@ -122,7 +122,7 @@
 							</div>
 							<div class="active-dialog__date">Friday, June 15, 2017, at 10:52 am</div>
 						</div>
-						<div class="active-dialog__item active-dialog__item--me">
+						<div class="active-dialog__item--static active-dialog__item active-dialog__item--me">
 							<div class="active-dialog__wrapper active-dialog__wrapper--multiple">
 								<div class="person active-dialog__person active-dialog__person--me">
 									<img class="person__ava" src="src/img/person5.jpg">
@@ -134,7 +134,7 @@
 							</div>
 							<div class="active-dialog__date">Friday, June 15, 2017, at 11:00 am</div>
 						</div>
-						<div class="active-dialog__item">
+						<div class="active-dialog__item--static active-dialog__item">
 							<div class="active-dialog__wrapper">
 								<div class="person active-dialog__person">
 									<img class="person__ava" src="src/img/person6.jpg">
@@ -143,7 +143,7 @@
 							</div>
 							<div class="active-dialog__date">Friday, June 15, 2017, at 11:05 am</div>
 						</div>
-						<div class="active-dialog__item">
+						<div class="active-dialog__item--static active-dialog__item">
 							<div class="active-dialog__wrapper">
 								<div class="person active-dialog__person">
 									<img class="person__ava" src="src/img/person6.jpg">
@@ -173,6 +173,7 @@
 					</div>
 					<div class="messages__item-wrapper">
 						<div class="messages__item">
+						<span class="wholeClickable"></span>
 				  			<div class="person">
 								<img class="person__ava messages__person-ava" src="src/img/person4.jpg">
 								<div class="messages__wrapper">
@@ -185,6 +186,7 @@
 							</div>
 				  		</div>
 				  		<div class="messages__item">
+				  		<span class="wholeClickable"></span>
 				  			<div class="person">
 								<img class="person__ava messages__person-ava" src="src/img/person4.jpg">
 								<div class="messages__wrapper">
@@ -197,6 +199,7 @@
 							</div>
 				  		</div>
 				  		<div class="messages__item">
+				  			<span class="wholeClickable"></span>
 				  			<div class="person">
 								<img class="person__ava messages__person-ava" src="src/img/person2.jpg">
 								<div class="messages__wrapper">
@@ -209,6 +212,7 @@
 							</div>
 				  		</div>
 				  		<div class="messages__item">
+				  		<span class="wholeClickable"></span>
 				  			<div class="person">
 								<img class="person__ava messages__person-ava" src="src/img/person6.jpg">
 								<div class="messages__wrapper">
@@ -221,6 +225,7 @@
 							</div>
 				  		</div>
 				  		<div class="messages__item">
+				  		<span class="wholeClickable"></span>
 				  			<div class="person">
 								<img class="person__ava messages__person-ava" src="src/img/person7.jpg">
 								<div class="messages__wrapper">
@@ -242,8 +247,12 @@
 
 			senderField = document.getElementById("sender-field");
 			chat = document.getElementById("chat");
-			
+			messages = document.querySelector(".messages__item-wrapper");
+
+			messages.addEventListener('click', appChat.messages.makeActive)
+
 			senderField.addEventListener('change', appChat.activeDialog.sendMessageMe);
+
 
 		});
 	</script>

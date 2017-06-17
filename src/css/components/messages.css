@@ -3,17 +3,44 @@
 }
 .messages__item {
 	padding: 25px 15px;
+	border-left: 2px solid transparent;
+	position: relative;
+}
+.messages__item:hover, .messages__item:active {
+	background-color: #e5ecef;
+	cursor: pointer;
+}
+.messages__item:active, .messages__item--active {
+	background-color: #e5ecef;
+	border-left: 2px solid #0aa8e3;
+}
+/**
+ * CSS Hack to make all area clickable
+ */
+.messages__item span.wholeClickable { 
+  position:absolute; 
+  width:100%;
+  height:100%;
+  top:0;
+  left: 0;
+  z-index: 1;
+}
+.messages__item:not(:first-child) {
 	border-top: 1px solid #dcdcdc;
+}
+.messages__item--link {
+	display: block;
 }
 .messages__header {
 	height: 70px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-bottom: 1px solid #dcdcdc;
 }
 .messages__item-wrapper {
 	height: calc(100vh - 150px);
-	overflow: scroll;
+	overflow: auto;
 }
 .messages__person-name {
     max-width: 145px;

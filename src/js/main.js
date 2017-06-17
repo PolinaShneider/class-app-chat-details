@@ -41,6 +41,7 @@ appChat.docReady = function (f) {
 appChat.time = require('./modules/time');
 appChat.helpers = require('./modules/helpers');
 appChat.activeDialog = require('./modules/activeDialog');
+appChat.messages = require('./modules/messages');
 
 
 module.exports = appChat;

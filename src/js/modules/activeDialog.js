@@ -20,7 +20,23 @@ module.exports = function(){
         'Алло'
     ];
 
+    var hideStatic = function() {
+    	var items = document.getElementsByClassName("active-dialog__item--static");
+    	for (var i = 0; i < items.length; i++) {
+    		if (!items[i].classList.contains("hide")) {
+    			items[i].classList.add("hide");
+    		}
+    	}
+    };
+
+    var scrollToBottom = function() {
+    	var objDiv = document.getElementById("chat");
+		objDiv.scrollTop = objDiv.scrollHeight;
+    }
+
 	var sendMessageMe = function() {
+		
+		hideStatic();
 
 	    var dialog__item = document.createElement("div");
 	    dialog__item.setAttribute("class", "active-dialog__item active-dialog__item--me");
@@ -60,6 +76,7 @@ module.exports = function(){
 
 	    senderField.value = '';
 	    sendMessageOther();
+	    scrollToBottom();
 	}
 
 	var sendMessageOther = function() {
@@ -98,10 +115,12 @@ module.exports = function(){
 	    dialog__date.textContent += appChat.time.buildDate();
 
 	    dialog__item.appendChild(dialog__date);
+	    scrollToBottom();
 	    
 	};
 
 	return {
-		sendMessageMe : sendMessageMe
+		sendMessageMe : sendMessageMe,
+		hideStatic : hideStatic
 	}
 }({})

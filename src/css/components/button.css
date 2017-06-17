@@ -16,3 +16,6 @@
 	color: #fff;
 	padding: 7px 25px;
 }
+.send-button:hover {
+	background-color: #0ba0d7;
+}

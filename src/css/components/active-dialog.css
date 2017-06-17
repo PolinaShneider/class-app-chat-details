@@ -32,10 +32,12 @@
 	border: 1px solid #dadada;
 	padding: 10px 12px;
 }
+.active-dialog__button:hover {
+	background-color: #e7e6e6;
+}
 .active-dialog__content {
 	padding: 20px 0;
 	height: calc(100vh - 270px);
-	width: 620px;
 	overflow: auto;
 }
 .active-dialog__item {
