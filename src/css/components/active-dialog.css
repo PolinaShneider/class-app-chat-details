@@ -27,6 +27,9 @@
 	margin-right: 0;
 	margin-left: 10px;
 }
+.active-dialog__person--mobile {
+	display: none;
+}
 .active-dialog__button {
 	color: #6a6a6a;
 	border: 1px solid #dadada;
@@ -50,12 +53,13 @@
 	display: flex;
 	flex-direction: row;
 	justify-content: center;
+	width: calc(100% - 40px);
 }
 .active-dialog__message {
 	position: relative;
-	width: 450px;
 	background-color: #fff;
 	padding: 10px;
+	width: 100%;
 }
 .active-dialog__message--me {
 	background-color: #e7f1f6;
@@ -95,6 +99,7 @@
 }
 .active-dialog__multiple {
 	flex-direction: column;
+	padding-right: 20px;
 }
 .active-dialog__wrapper--multiple {
 	align-items: flex-start;
@@ -112,4 +117,43 @@
 	align-items: center;
 	justify-content: space-around;
 	border-top: 1px solid #e7e7e7;
+}
+
+@media all and (max-width: 800px){
+	.active-dialog {
+		width: 100%;
+	}
+	.active-dialog__wrapper {
+		width: calc(100% - 30px); /*Minus padding left and right 15px*/
+	}
+	.active-dialog__header {
+		height: 60px;
+		justify-content: center;
+	}
+	.active-dialog__person--mobile {
+		display: block;
+		height: 36px;
+	}
+	.active-dialog__name {
+		font-size: 17px;
+    	margin-right: 15px;
+	}
+	.active-dialog__button {
+		display: none;
+	}
+	.active-dialog__content {
+		height: calc(100vh - 223px); /*Minus navbar (81px), minus header (61px), minus footer (61px) minus content padding-top (20px)*/
+    	padding: 20px 0 0 0;
+	}
+	.active-dialog__footer {
+		height: 60px;
+	}
+	.footer-person {
+		display: none;
+	}
+}
+@media all and (max-width: 426px) {
+	.active-dialog__content {
+		height: calc(100vh - 213px); /*Minus navbar (70px), minus header (61px), minus footer (61px) minus content padding-top (20px)*/
+	}
 }

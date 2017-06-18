@@ -68,3 +68,14 @@
 	overflow: hidden; 
 	max-height: 51px;
 }
+@media all and (max-width: 800px){
+	.messages__header {
+		height: 60px;
+	}
+	.messages__item-wrapper {
+		height: calc(100vh - 132px);
+	}
+	.messages__time {
+		display: none;
+	}
+}

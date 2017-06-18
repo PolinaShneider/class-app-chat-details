@@ -12,7 +12,7 @@
 }
 
 .navbar__search-form {
-	min-width: 320px;
+	width: 320px;
 }
 .navbar__person-info {
 	justify-content: space-between;
@@ -38,4 +38,30 @@
 	color: #c2c2c2;
 	font-size: 10px;
 	cursor: pointer;
+}
+
+@media all and (max-width: 425px){
+	.navbar {
+		height: 70px;
+	}
+	.navbar__content {
+		padding-top: 17px;
+    	padding-bottom: 17px;
+	}
+	.navbar__search-form {
+		width: 100%;
+	}
+
+	.navbar__person-info {
+		display: none;
+	}
+   
+}
+@media all and (min-width: 426px) and (max-width: 800px){
+	.navbar__person-info {
+		margin-left: 50px;
+	}
+	.navbar__search-form {
+    	width: calc(100% - 50px);
+	}
 }

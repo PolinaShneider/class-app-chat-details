@@ -52,3 +52,27 @@ input:-webkit-autofill:active {
 	border: 1px solid #dcdcdc;
 	border-right: 0;
 }
+
+@media all and (max-width: 425px){
+	.center-block {
+		height: calc(100% - 70px); /*Height of viewport minus height of navbar*/
+	}
+	.center-block__inner-right {
+		display: none;
+	}
+
+	.main-content-left {
+		display: none;
+	}
+   
+}
+@media all and (max-width: 800px){
+	.center-block {
+		height: calc(100% - 70px); /*Height of viewport minus height of navbar*/
+	}
+
+	.main-content-left {
+		display: none;
+	}
+   
+}
