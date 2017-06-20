@@ -1,17 +1,17 @@
 module.exports = function(){
 
-	var menuHide = function(el){
+	// var menuHide = function(el){
 
-		var targetShown = document.querySelector(".show-menu");
+	// 	var targetShown = document.querySelector(".show-menu");
 
 
-	    if (targetShown && !menu.contains(el.target)) {
-	        targetShown.classList.remove("show-menu");
-	        targetShown.classList.add("hide-menu");
+	//     if (targetShown && !menu.contains(el.target)) {
+	//         targetShown.classList.remove("show-menu");
+	//         targetShown.classList.add("hide-menu");
 
-	    }
+	//     }
 			    
-	}
+	// }
 
 	var menuToggle = function(event){
 		event.stopPropagation();
@@ -20,7 +20,7 @@ module.exports = function(){
 	}
 
 	return {
-		menuHide : menuHide,
+		// menuHide : menuHide,
 		menuToggle : menuToggle
 	}
 
