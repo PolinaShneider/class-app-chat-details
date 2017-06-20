@@ -42,6 +42,7 @@ appChat.time = require('./modules/time');
 appChat.helpers = require('./modules/helpers');
 appChat.activeDialog = require('./modules/activeDialog');
 appChat.messages = require('./modules/messages');
+appChat.menuLeft = require('./modules/menuLeft');
 
 
 module.exports = appChat;

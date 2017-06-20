@@ -12,11 +12,11 @@
 		<div class="menu-left main-content-left">
 			<div class="menu-left__header">
 				<div class="menu-left__branding-text">CLASS</div>
-				<div class="menu-left__hamburger">
+				<div class="menu-left__hamburger" id="menu-button">
 					<i class="fa fa-bars"></i>
 				</div>
 			</div>
-			<div class="menu-left__content">
+			<div class="menu-left__content hide-menu" id="menu">
 				<div class="menu-left__content-block">
 					<div class="menu-left__title">NAVIGATION</div>
 					<div class="menu-left__item-block">
@@ -58,9 +58,36 @@
 						</div>
 						<div class="menu-left__item menu-left__person">
 							<div class="person">
+								<img class="person__ava menu-left__person-ava" src="src/img/person6.jpg">
+								<div>
+									<div class="menu-left__person-name person__name">Mila Lovejoy</div>
+									<div class="menu-left__person-occupation">Classmate</div>
+								</div>
+							</div>
+						</div>
+						<div class="menu-left__item menu-left__person">
+							<div class="person">
 								<img class="person__ava menu-left__person-ava" src="src/img/person4.jpg">
 								<div>
 									<div class="menu-left__person-name person__name">Alexandra Andreevna</div>
+									<div class="menu-left__person-occupation">Classmate</div>
+								</div>
+							</div>
+						</div>
+						<div class="menu-left__item menu-left__person">
+							<div class="person">
+								<img class="person__ava menu-left__person-ava" src="src/img/person10.jpg">
+								<div>
+									<div class="menu-left__person-name person__name">Charles Novak</div>
+									<div class="menu-left__person-occupation">History</div>
+								</div>
+							</div>
+						</div>
+						<div class="menu-left__item menu-left__person">
+							<div class="person">
+								<img class="person__ava menu-left__person-ava" src="src/img/person9.jpg">
+								<div>
+									<div class="menu-left__person-name person__name">Samanta Linkoln</div>
 									<div class="menu-left__person-occupation">Classmate</div>
 								</div>
 							</div>
@@ -252,11 +279,16 @@
 			senderField = document.getElementById("sender-field");
 			chat = document.getElementById("chat");
 			messages = document.querySelector(".messages__item-wrapper");
+			menuButton = document.getElementById("menu-button");
+			menu = document.getElementById("menu");
 
-			messages.addEventListener('click', appChat.messages.makeActive)
+			menuButton.addEventListener('click', appChat.menuLeft.menuToggle);
+
+			document.addEventListener('click', appChat.menuLeft.menuHide);
+
+			messages.addEventListener('click', appChat.messages.makeActive);
 
 			senderField.addEventListener('change', appChat.activeDialog.sendMessageMe);
-
 
 		});
 	</script>
