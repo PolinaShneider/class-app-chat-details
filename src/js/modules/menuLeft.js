@@ -6,7 +6,8 @@ module.exports = function(){
 
 
 	    if (targetShown && !menu.contains(el.target)) {
-	        targetShown.classList.remove('show-menu');
+	        targetShown.classList.remove("show-menu");
+	        targetShown.classList.add("hide-menu");
 
 	    }
 			    
@@ -15,6 +16,7 @@ module.exports = function(){
 	var menuToggle = function(event){
 		event.stopPropagation();
 		menu.classList.toggle("show-menu");
+		menu.classList.toggle("hide-menu");
 	}
 
 	return {
