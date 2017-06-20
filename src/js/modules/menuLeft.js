@@ -4,7 +4,8 @@ module.exports = function(){
 
 		var targetShown = document.querySelector(".show-menu");
 
-	    if (!menu.contains(el.target)) {
+
+	    if (targetShown && !menu.contains(el.target)) {
 	        targetShown.classList.remove('show-menu');
 
 	    }
