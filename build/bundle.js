@@ -86,6 +86,13 @@ __webpack_require__(13);
 
 module.exports = function(){
 
+	var init = function() {
+
+		senderField = document.getElementById("sender-field");
+
+		senderField.addEventListener('change', sendMessageMe);
+	};
+
 	var answers = [
         'Уже работаем над этим!',
         'Я так не умею',
@@ -119,6 +126,8 @@ module.exports = function(){
     	var objDiv = document.getElementById("chat");
 		objDiv.scrollTop = objDiv.scrollHeight;
     }
+
+    var	chat = document.getElementById("chat");
 
 	var sendMessageMe = function() {
 		
@@ -206,8 +215,7 @@ module.exports = function(){
 	};
 
 	return {
-		sendMessageMe : sendMessageMe,
-		hideStatic : hideStatic
+		init : init
 	}
 }({})
 
@@ -241,18 +249,13 @@ module.exports = function() {
 
 module.exports = function(){
 
-	// var menuHide = function(el){
+	var init = function(){
 
-	// 	var targetShown = document.querySelector(".show-menu");
+		menuButton = document.getElementById("menu-button");
+		menu = document.getElementById("menu");
 
-
-	//     if (targetShown && !menu.contains(el.target)) {
-	//         targetShown.classList.remove("show-menu");
-	//         targetShown.classList.add("hide-menu");
-
-	//     }
-			    
-	// }
+		menuButton.addEventListener('click', menuToggle);
+	};
 
 	var menuToggle = function(event){
 		event.stopPropagation();
@@ -261,8 +264,7 @@ module.exports = function(){
 	}
 
 	return {
-		// menuHide : menuHide,
-		menuToggle : menuToggle
+		init : init
 	}
 
 }({})
@@ -272,6 +274,11 @@ module.exports = function(){
 /***/ (function(module, exports) {
 
 module.exports = function(){
+
+	var init = function(){
+		messages = document.querySelector(".messages__item-wrapper");
+		messages.addEventListener('click', makeActive);
+	};
 
 	var makeUnactive = function(){
 
@@ -291,8 +298,9 @@ module.exports = function(){
 		}
 	}
 	return {
-		makeActive : makeActive
+		init : init
 	}
+	
 }({})
 
 /***/ }),
@@ -783,12 +791,56 @@ appChat.helpers = __webpack_require__(3);
 appChat.activeDialog = __webpack_require__(2);
 appChat.messages = __webpack_require__(5);
 appChat.menuLeft = __webpack_require__(4);
+appChat.navbar = __webpack_require__(32);
 
 
 module.exports = appChat;
 
 
 
+
+/***/ }),
+/* 18 */,
+/* 19 */,
+/* 20 */,
+/* 21 */,
+/* 22 */,
+/* 23 */,
+/* 24 */,
+/* 25 */,
+/* 26 */,
+/* 27 */,
+/* 28 */,
+/* 29 */,
+/* 30 */,
+/* 31 */,
+/* 32 */
+/***/ (function(module, exports) {
+
+module.exports = function(){
+
+	var init = function(){
+
+		profileButton = document.getElementById("profile-button");
+		dropDownMenu = document.querySelector(".dropdown");
+
+		profileButton.addEventListener('mouseenter', function(){
+				dropDownMenu.classList.add("open")
+		});
+
+		profileButton.addEventListener('click', function(){
+			dropDownMenu.classList.toggle("open")
+		});
+
+		dropDownMenu.addEventListener('mouseleave', function(){
+			dropDownMenu.classList.remove("open")
+		});
+	};
+
+	return {
+		init : init
+	}
+}({})
 
 /***/ })
 /******/ ]);

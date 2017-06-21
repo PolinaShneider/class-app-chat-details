@@ -1,5 +1,10 @@
 module.exports = function(){
 
+	var init = function(){
+		messages = document.querySelector(".messages__item-wrapper");
+		messages.addEventListener('click', makeActive);
+	};
+
 	var makeUnactive = function(){
 
 		messages = document.querySelector(".messages__item-wrapper");
@@ -18,6 +23,7 @@ module.exports = function(){
 		}
 	}
 	return {
-		makeActive : makeActive
+		init : init
 	}
+	
 }({})

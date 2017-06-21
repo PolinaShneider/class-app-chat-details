@@ -43,6 +43,7 @@ appChat.helpers = require('./modules/helpers');
 appChat.activeDialog = require('./modules/activeDialog');
 appChat.messages = require('./modules/messages');
 appChat.menuLeft = require('./modules/menuLeft');
+appChat.navbar = require('./modules/navbar');
 
 
 module.exports = appChat;

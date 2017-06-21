@@ -1,17 +1,12 @@
 module.exports = function(){
 
-	// var menuHide = function(el){
+	var init = function(){
 
-	// 	var targetShown = document.querySelector(".show-menu");
+		menuButton = document.getElementById("menu-button");
+		menu = document.getElementById("menu");
 
-
-	//     if (targetShown && !menu.contains(el.target)) {
-	//         targetShown.classList.remove("show-menu");
-	//         targetShown.classList.add("hide-menu");
-
-	//     }
-			    
-	// }
+		menuButton.addEventListener('click', menuToggle);
+	};
 
 	var menuToggle = function(event){
 		event.stopPropagation();
@@ -20,8 +15,7 @@ module.exports = function(){
 	}
 
 	return {
-		// menuHide : menuHide,
-		menuToggle : menuToggle
+		init : init
 	}
 
 }({})

@@ -1,5 +1,12 @@
 module.exports = function(){
 
+	var init = function() {
+
+		senderField = document.getElementById("sender-field");
+
+		senderField.addEventListener('change', sendMessageMe);
+	};
+
 	var answers = [
         'Уже работаем над этим!',
         'Я так не умею',
@@ -33,6 +40,8 @@ module.exports = function(){
     	var objDiv = document.getElementById("chat");
 		objDiv.scrollTop = objDiv.scrollHeight;
     }
+
+    var	chat = document.getElementById("chat");
 
 	var sendMessageMe = function() {
 		
@@ -120,7 +129,6 @@ module.exports = function(){
 	};
 
 	return {
-		sendMessageMe : sendMessageMe,
-		hideStatic : hideStatic
+		init : init
 	}
 }({})

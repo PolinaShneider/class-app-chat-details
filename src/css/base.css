@@ -53,6 +53,30 @@ input:-webkit-autofill:active {
 	border-right: 0;
 }
 
+.menu__item-block {
+	display: flex;
+	flex-direction: column;
+}
+.menu__item {
+	display: flex;
+    align-items: center;
+	padding: 15px 0;
+	color: #4d4d4d;
+}
+.menu__item:hover {
+	background-color: #F7F7F7;
+	cursor: pointer;
+	margin-left: -20px;
+    margin-right: -20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 100%;
+}
+.menu__icon {
+	font-size: 20px !important;
+	width: 35px;
+}
+
 @media all and (max-width: 425px){
 	.center-block {
 		height: calc(100% - 70px); /*Height of viewport minus height of navbar*/

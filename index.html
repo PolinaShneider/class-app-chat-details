@@ -103,14 +103,22 @@
 					<span class="input-form__icon search-form__icon"><i class="fa fa-search"></i></span>
 				      <input type="search" id="search" placeholder="Search people, documents, dates..." />
 				  	</div>
-					<div class="navbar__person-info person">
+					<div class="navbar__person-info person dropdown">
 						<div class="navbar__person-ava-wrapper">
 							<div class="navbar__person-ava-circle"></div>
 							<img class="person__ava" src="src/img/person5.jpg">
 						</div>
 						<div class="person__name navbar__person-name">Serafima Chizikova</div>
-						<div class="navbar__icon-arrow">
+						<div class="navbar__icon-arrow" id="profile-button">
 							<i class="fa fa-chevron-down"></i>
+						</div>
+						<div class="dropdown-contents">
+							<div class="menu__item-block">
+								<div class="menu__item"><i class="fa fa-user menu__icon"></i>PERSONAL DATA</div>
+								<div class="menu__item"><i class="fa fa-th-large menu__icon"></i>APPs CENTER</div>
+								<div class="menu__item"><i class="fa fa-cog menu__icon"></i>SETTINGS</div>
+								<div class="menu__item"><i class="fa fa-birthday-cake menu-left__icon"></i>BIRTHDAYS</div>
+							</div>
 						</div>
 					</div>
 				</div>
@@ -276,19 +284,10 @@
 	<script type="text/javascript">
 		appChat.docReady(function(){
 
-			senderField = document.getElementById("sender-field");
-			chat = document.getElementById("chat");
-			messages = document.querySelector(".messages__item-wrapper");
-			menuButton = document.getElementById("menu-button");
-			menu = document.getElementById("menu");
-
-			menuButton.addEventListener('click', appChat.menuLeft.menuToggle);
-
-			// document.addEventListener('click', appChat.menuLeft.menuHide);
-
-			messages.addEventListener('click', appChat.messages.makeActive);
-
-			senderField.addEventListener('change', appChat.activeDialog.sendMessageMe);
+			appChat.navbar.init();
+			appChat.activeDialog.init();
+			appChat.menuLeft.init();
+			appChat.messages.init();
 
 		});
 	</script>
