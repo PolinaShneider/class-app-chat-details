@@ -41,11 +41,12 @@ module.exports = function(){
 		objDiv.scrollTop = objDiv.scrollHeight;
     }
 
-    var	chat = document.getElementById("chat");
 
 	var sendMessageMe = function() {
 		
 		hideStatic();
+		
+		var	chat = document.getElementById("chat");
 
 	    var dialog__item = document.createElement("div");
 	    dialog__item.setAttribute("class", "active-dialog__item active-dialog__item--me");
